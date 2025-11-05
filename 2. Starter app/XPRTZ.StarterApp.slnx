@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="XPRTZ.StarterApp.ApiService/XPRTZ.StarterApp.ApiService.csproj" />
+  <Project Path="XPRTZ.StarterApp.AppHost/XPRTZ.StarterApp.AppHost.csproj" />
+  <Project Path="XPRTZ.StarterApp.ServiceDefaults/XPRTZ.StarterApp.ServiceDefaults.csproj" />
+  <Project Path="XPRTZ.StarterApp.Tests/XPRTZ.StarterApp.Tests.csproj" />
+  <Project Path="XPRTZ.StarterApp.Web/XPRTZ.StarterApp.Web.csproj" />
+</Solution>

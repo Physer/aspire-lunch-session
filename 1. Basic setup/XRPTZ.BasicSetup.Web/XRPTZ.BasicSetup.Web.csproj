@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\XPRTZ.BasicSetup.ServiceDefaults\XPRTZ.BasicSetup.ServiceDefaults.csproj" />
   </ItemGroup>
 

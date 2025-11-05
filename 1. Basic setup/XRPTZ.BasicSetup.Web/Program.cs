@@ -1,6 +1,8 @@
 using XRPTZ.BasicSetup.Web.Components;
+using XRPTZ.BasicSetup.Web.Database;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.AddSqlServerDbContext<BasicSetupContext>(connectionName: "BasicSetup");
 
 builder.AddServiceDefaults();
 

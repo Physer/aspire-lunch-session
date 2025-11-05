@@ -15,4 +15,8 @@
     <PackageReference Include="Aspire.Hosting.Azure.Sql" Version="9.5.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XRPTZ.BasicSetup.Web\XRPTZ.BasicSetup.Web.csproj" />
+  </ItemGroup>
+
 </Project>

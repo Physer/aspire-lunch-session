@@ -2,4 +2,4 @@
 
 namespace XRPTZ.BasicSetup.Web.Database;
 
-internal class BasicSetupContext : DbContext;
+internal class BasicSetupContext(DbContextOptions options) : DbContext(options);

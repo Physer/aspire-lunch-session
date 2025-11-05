@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
 using XRPTZ.BasicSetup.Web.Components;
 using XRPTZ.BasicSetup.Web.Database;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.AddSqlServerDbContext<BasicSetupContext>(connectionName: "BasicSetup");
+
+// Aspire client-integration
+// builder.AddSqlServerDbContext<BasicSetupContext>(connectionName: "BasicSetup");
+
+var connectionString = builder.Configuration.GetConnectionString("BasicSetup") ?? throw new InvalidOperationException("Connection string 'BasicSetup' not found.");
+builder.Services.AddDbContextFactory<BasicSetupContext>(options => options.UseSqlServer(connectionString));
 
 builder.AddServiceDefaults();
 

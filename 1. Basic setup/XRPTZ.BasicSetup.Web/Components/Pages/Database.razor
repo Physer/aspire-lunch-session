@@ -1,0 +1,72 @@
+﻿@rendermode InteractiveServer
+@page "/database"
+@using Bogus
+@using Microsoft.EntityFrameworkCore
+@using XRPTZ.BasicSetup.Web.Database
+@inject IDbContextFactory<BasicSetupContext> DbFactory
+
+<PageTitle>Database Management</PageTitle>
+<button class="btn btn-primary" @onclick="GenerateUsers">Generate Users</button>
+@if (_isGenerating)
+{
+    <br />
+    <br />
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}
+<br />
+<hr />
+<br />
+
+@if (_users?.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Full name</th>
+                <th scope="col">Username</th>
+                <th scope="col">E-mail address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in _users)
+            {
+                <tr>
+                    <th scope="row">@user.Id</th>
+                    <td>@user.FullName</td>
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private bool _isGenerating = false;
+    private List<User>? _users;
+
+    private async Task GenerateUsers()
+    {
+        using BasicSetupContext context = await DbFactory.CreateDbContextAsync();
+        _users = [];
+        _isGenerating = true;
+
+        await context.Database.EnsureDeletedAsync();
+        await context.Database.EnsureCreatedAsync();
+
+        var userGenerator = new Faker<User>()
+            .RuleFor(user => user.FullName, faker => faker.Person.FullName)
+            .RuleFor(user => user.Username, faker => faker.Internet.UserName())
+            .RuleFor(user => user.Email, faker => faker.Person.Email);
+        var users = userGenerator.Generate(50);
+
+        await context.Users.AddRangeAsync(users);
+        await context.SaveChangesAsync();
+
+        _users.AddRange(users);
+        _isGenerating = false;
+    }
+}

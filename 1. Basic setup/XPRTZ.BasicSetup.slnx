@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="XPRTZ.BasicSetup.AppHost/XPRTZ.BasicSetup.AppHost.csproj" />
+  <Project Path="XPRTZ.BasicSetup.ServiceDefaults/XPRTZ.BasicSetup.ServiceDefaults.csproj" />
+</Solution>

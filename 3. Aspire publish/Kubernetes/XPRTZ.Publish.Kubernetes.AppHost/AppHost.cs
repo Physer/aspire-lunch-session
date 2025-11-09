@@ -1,5 +1,7 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
+builder.AddKubernetesEnvironment("k8s");
+
 var cache = builder.AddRedis("cache");
 
 var apiService = builder.AddProject<Projects.XPRTZ_Publish_Kubernetes_ApiService>("apiservice")

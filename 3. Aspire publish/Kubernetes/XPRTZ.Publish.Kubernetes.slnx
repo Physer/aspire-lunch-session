@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="XPRTZ.Publish.Kubernetes.ApiService/XPRTZ.Publish.Kubernetes.ApiService.csproj" />
+  <Project Path="XPRTZ.Publish.Kubernetes.AppHost/XPRTZ.Publish.Kubernetes.AppHost.csproj" />
+  <Project Path="XPRTZ.Publish.Kubernetes.ServiceDefaults/XPRTZ.Publish.Kubernetes.ServiceDefaults.csproj" />
+  <Project Path="XPRTZ.Publish.Kubernetes.Web/XPRTZ.Publish.Kubernetes.Web.csproj" />
+</Solution>

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="XPRTZ.AspireDeploy.ApiService/XPRTZ.AspireDeploy.ApiService.csproj" />
+  <Project Path="XPRTZ.AspireDeploy.AppHost/XPRTZ.AspireDeploy.AppHost.csproj" />
+  <Project Path="XPRTZ.AspireDeploy.ServiceDefaults/XPRTZ.AspireDeploy.ServiceDefaults.csproj" />
+  <Project Path="XPRTZ.AspireDeploy.Web/XPRTZ.AspireDeploy.Web.csproj" />
+</Solution>

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="XPRTZ.Publish.ContainerApps.ApiService/XPRTZ.Publish.ContainerApps.ApiService.csproj" />
+  <Project Path="XPRTZ.Publish.ContainerApps.AppHost/XPRTZ.Publish.ContainerApps.AppHost.csproj" />
+  <Project Path="XPRTZ.Publish.ContainerApps.ServiceDefaults/XPRTZ.Publish.ContainerApps.ServiceDefaults.csproj" />
+  <Project Path="XPRTZ.Publish.ContainerApps.Web/XPRTZ.Publish.ContainerApps.Web.csproj" />
+</Solution>
